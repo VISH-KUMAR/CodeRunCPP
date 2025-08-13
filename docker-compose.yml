@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  cpp-runner:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: cpp-runner
+    volumes:
+      - ./temp:/code
+    tty: true
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ulimits:
+      nproc: 64
+      nofile:
+        soft: 1024
+        hard: 1024
+    mem_limit: 256M
+    restart: "no"
+
+  webapp:
+    image: node:16
+    container_name: cpp-webapp
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+      - "3000:3000"
+    command: >
+      bash -c "npm install && 
+      cd client && npm install && 
+      cd .. && npm run dev-full"
+    depends_on:
+      - cpp-runner
+    environment:
+      - NODE_ENV=development

@@ -1,0 +1,193 @@
+/* Main App styles */
+.App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Dark theme styles */
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #cccccc;
+}
+
+/* Toolbar styles */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+  padding: 5px 15px;
+  border-bottom: 1px solid #1a1a1a;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.toolbar-left h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.current-file {
+  font-size: 13px;
+  opacity: 0.8;
+  border-left: 1px solid #555;
+  padding-left: 15px;
+}
+
+.toolbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.debug-button {
+  background-color: #252526;
+  border-color: #333333;
+  font-size: 12px;
+  padding: 5px 15px;
+}
+
+.compile-button {
+  background-color: #5e5e5e;
+  border-color: #444444;
+  font-size: 12px;
+  padding: 5px 15px;
+}
+
+.run-button {
+  background-color: #0e639c;
+  border-color: #0e639c;
+  font-size: 12px;
+  padding: 5px 15px;
+}
+
+.config-button {
+  background-color: #252526;
+  border-color: #333333;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container styles */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative; /* For absolute positioning of sidebar */
+}
+
+/* Content area containing sidebar and editor */
+.content-area {
+  display: flex;
+  position: relative;
+  height: calc(100% - 200px); /* Reserve space for terminal */
+  overflow: hidden;
+}
+
+/* Editor section */
+.editor-container {
+  flex-grow: 1;
+  overflow: hidden;
+  transition: margin-left 0.3s ease;
+}
+
+.editor-container.with-sidebar {
+  margin-left: 250px; /* Match the width of the open sidebar */
+}
+
+.editor-container.without-sidebar {
+  margin-left: 30px; /* Match the width of the collapsed sidebar */
+}
+
+.code-editor-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Terminal container */
+.terminal-container {
+  background-color: #252526;
+  border-top: 1px solid #1a1a1a;
+  height: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute; /* Force position at the bottom */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; /* Make sure it appears above other content */
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #333333;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.terminal-header h5 {
+  margin: 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.terminal-close {
+  color: #cccccc;
+  font-size: 18px;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Console styles */
+.console-container {
+  background-color: #1e1e1e;
+  color: #cccccc;
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.console-output {
+  font-family: 'Consolas', 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.console-error {
+  color: #f48771;
+}
+
+.console-success {
+  color: #89d185;
+}
+
+.console-empty {
+  color: #818181;
+  font-style: italic;
+}
+
