@@ -1,4 +1,4 @@
-# C++ Web App
+# Dev Arena ++
 
 A web application that allows users to write, run, and debug C++ code directly in the browser.
 

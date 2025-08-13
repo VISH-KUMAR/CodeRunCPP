@@ -102,7 +102,7 @@ function App() {
     <div className="App dark-theme">
       <div className="toolbar">
         <div className="toolbar-left">
-          <h4>C++ Web App</h4>
+          <h4>DevArena++</h4>
           <span className="current-file">{currentFileName}</span>
         </div>
         <div className="toolbar-buttons">
